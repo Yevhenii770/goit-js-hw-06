@@ -17,18 +17,12 @@ const galaryUl = document.querySelector('.gallery')
 galaryUl.style.display = 'flex'
 galaryUl.style.justifyContent = 'space-around'
 
-const makeImgMarkup = options => {
 
-  return options.map(({ url, alt }) => {
+const markupImg = makeImgMarkup(images)
+function makeImgMarkup(images) {
+  return images.map(({ url, alt }) => {
+      return `<img style="width: 400px;" src="${url}" alt="${alt} ">`
+    }).join('') 
+  }
 
-    const createTagImg = document.createElement('img')
-    createTagImg.src = url
-    createTagImg.alt = alt
-    createTagImg.style.width = '400px'
-    return createTagImg
-
-  })
-}
-const elements = makeImgMarkup(images)
-galaryUl.append(...elements)
-
+galaryUl.insertAdjacentHTML('beforeend', markupImg)

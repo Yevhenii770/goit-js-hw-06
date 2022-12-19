@@ -13,7 +13,9 @@ function onSubmit(event) {
         alert ('Все поля должны быть заполнены!')
     } if (firstInput.value !== '' && secondInput.value !== '') {
         objResolt.push("email:",firstInput.value)
-       objResolt.push("password:",secondInput.value)
+        objResolt.push("password:", secondInput.value)
+        firstInput.value = ''
+        secondInput.value = ''
     }
     
     }
