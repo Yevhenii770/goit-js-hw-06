@@ -5,7 +5,7 @@ function onChangeColor(event) {
     validationInput.classList.remove('valid')
     validationInput.classList.remove('invalid')
     
-    if (event.currentTarget.value.length > 6) {
+    if (event.currentTarget.value.length > 6 || event.currentTarget.value.length < 6) {
         validationInput.classList.add('invalid')
     } if (event.currentTarget.value.length === 6) {
         validationInput.classList.add('valid')
